@@ -97,6 +97,9 @@ public class SinglyLinkedList<T extends Comparable<T>> {
         sl.add(3);
         sl.add(26);
         sl.add(39);
+//        sl.printSinglyLinkedList();
+//        sl.reverseList();
+//        sl.printSinglyLinkedList();
         SinglyLinkedList<Integer> sl2 = new SinglyLinkedList<>();
         sl2.add(13);
         sl2.add(17);
