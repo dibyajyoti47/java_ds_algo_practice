@@ -119,22 +119,23 @@ public class DoublyLinkedList<T extends Comparable<T>> {
             tail=tail.next;
         }
         this.head=dummyNode.next;
+        this.head.previous=null;
     }
     public static void main(String[] args) {
-        DoublyLinkedList<Integer> sl = new DoublyLinkedList<>();
-        sl.add(3);
-        sl.add(26);
-        sl.add(39);
-        sl.printList();
-        sl.reverseList();
-        sl.printList();
-        sl.printReversedList();
-//        DoublyLinkedList<Integer> sl2 = new DoublyLinkedList<>();
-//        sl2.add(13);
-//        sl2.add(17);
-//        sl.mergeList(sl2);
+        DoublyLinkedList<Integer> dl1 = new DoublyLinkedList<>();
+        dl1.add(3);
+        dl1.add(26);
+        dl1.add(39);
 //        sl.printList();
 //        sl.reverseList();
 //        sl.printList();
+//        sl.printReversedList();
+
+        DoublyLinkedList<Integer> dl2 = new DoublyLinkedList<>();
+        dl2.add(13);
+        dl2.add(17);
+        dl1.mergeList(dl2);
+        dl1.printList();
+        dl1.printReversedList();
     }
 }
