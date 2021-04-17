@@ -25,6 +25,7 @@ public class CircularQueue<T> {
         if (bottom < queue.length-1) bottom++;
         else bottom=0;
     }
+
     public T poll() {
         T t = (T) queue[top];
         queue[top++] = null;
@@ -32,6 +33,8 @@ public class CircularQueue<T> {
         else if (size()==0) top=bottom=0;
         return t;
     }
+
+    ////////////////////////////////////////////////////////////////////////
 
     public void printCircularQueue() {
         if (bottom >= top) {
@@ -41,9 +44,6 @@ public class CircularQueue<T> {
             for (int i=0; i<bottom;i++) System.out.print(queue[i]);
         }
     }
-
-    ////////////////////////////////////////////////////////////////////////
-
     public T peek() {
         if (size() == 0) throw new NoSuchElementException();
         return (T)queue[top];
