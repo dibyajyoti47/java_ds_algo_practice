@@ -126,10 +126,10 @@ public class DoublyLinkedList<T extends Comparable<T>> {
         dl1.add(3);
         dl1.add(26);
         dl1.add(39);
-//        sl.printList();
-//        sl.reverseList();
-//        sl.printList();
-//        sl.printReversedList();
+        dl1.printList();
+        dl1.reverseList();
+        dl1.printList();
+        dl1.printReversedList();
 
         DoublyLinkedList<Integer> dl2 = new DoublyLinkedList<>();
         dl2.add(13);
