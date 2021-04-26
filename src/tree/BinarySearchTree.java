@@ -29,6 +29,23 @@ public class BinarySearchTree<T extends Comparable<T>> {
         else root.insert(data);
     }
 
+    public void delete (T value) {
+       root = delete(root, value);
+    }
+
+    private Node<T> delete(Node<T> subTreeRoot, T value) {
+        if (subTreeRoot == null) return subTreeRoot;
+        if (value.compareTo(subTreeRoot.data) < 0) {
+            subTreeRoot.leftChild = delete(subTreeRoot.leftChild, value);
+        } else if (value.compareTo(subTreeRoot.data) > 0) {
+            subTreeRoot.rightChild = delete(subTreeRoot.rightChild, value);
+        } else {
+            if (subTreeRoot.leftChild == null) return subTreeRoot.rightChild;
+            else if (subTreeRoot.rightChild == null) return subTreeRoot.leftChild;
+        }
+        return subTreeRoot;
+    }
+
     public boolean isPresent (T data) {
         if (root != null) return root.get(data) == null ? false : true;
         return false;
