@@ -17,9 +17,12 @@ public class BinarySearchTree<T extends Comparable<T>> {
         tree.insert(22);
         tree.insert(32);
         tree.traverseInOrder();
-        System.out.println(tree.isPresent(154));
-        System.out.println(tree.getMin());
-        System.out.println(tree.getMax());
+        tree.delete(277);
+        tree.traverseInOrder();
+
+//        System.out.println(tree.isPresent(154));
+//        System.out.println(tree.getMin());
+//        System.out.println(tree.getMax());
     }
 
     private Node<T> root;
@@ -42,6 +45,9 @@ public class BinarySearchTree<T extends Comparable<T>> {
         } else {
             if (subTreeRoot.leftChild == null) return subTreeRoot.rightChild;
             else if (subTreeRoot.rightChild == null) return subTreeRoot.leftChild;
+
+            subTreeRoot.data = subTreeRoot.rightChild.getMin();
+            subTreeRoot.rightChild = delete(subTreeRoot.rightChild, subTreeRoot.data);
         }
         return subTreeRoot;
     }
